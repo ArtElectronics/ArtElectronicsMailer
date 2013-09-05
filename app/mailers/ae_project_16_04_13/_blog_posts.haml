@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: '"Рожденные летать... и ползать" в Русском музее',
+      url: 'http://www.artelectronics.ru/blogs/83',
+      content: 'Выставка посвящена воплощению образов представителей мира живой природы — птиц и насекомых в отечественном искусстве ХVIII — начала ХХI века, и включает произведения, выполненные художниками в нетрадиционных техниках.'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Art Electronics выступает на Молодежном Медиа-Форуме!',
+      url: 'http://www.artelectronics.ru/blogs/82',
+      content: '12 апреля в Санкт-Петербургском государственном университете технологии и дизайна прошел Форум молодежных СМИ и молодых журналистов Северо-Запада «МЕДИА - СТАРТ».'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Apres nous. Выставка фотографии Сергея Быкова',
+      url: 'http://www.artelectronics.ru/blogs/81',
+      content: '«Après Nous» («После нас») – самый объёмный и продолжительный проект (2002-2010, номинировался и попал в shortlist на European Publishers Award for Photography в 2010), включает в себя коллекцию портретов людей и мест, повстречавшихся мне на пути, и не оставивших меня равнодушным.'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]

@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: 'Конкурс фотографии "Будущее Петербурга": миражи города будущего',
+      url: 'http://www.artelectronics.ru/blogs/84',
+      content: '12 апреля в Университете технологии и дизайна (СПГУТД) прошел Молодежный форум «МЕДИА-СТАРТ». Art Electronics принял участие в его программе: редактор журнала Дженнет Атаева выступила с презентацией «Будущее СМИ в Интернете: интерактив и визуальность», в ходе которой рассказала об опытах журнала с новым представлением текстов в Интернете.'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Приз зрительских симпатий конкурса "Будущее Петербурга"',
+      url: 'http://www.artelectronics.ru/blogs/85',
+      content: 'Перебирая фотографии, присланные на конкурс, редакция Art Electronics решила вручить еще один приз участникам конкурса фотографии «Будущее Петербурга»: приз зрительских симпатий - iPod Nano. Официальные результаты конкурса и работы победителей - здесь.'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Безопасное извлечение',
+      url: 'http://www.artelectronics.ru/blogs/77',
+      content: 'Работа с выставки «Молодость Петербурга. Начало», прошедшей 21 февраля - 17 марта 2013.'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]

@@ -1,17 +1,19 @@
 :ruby
+  def alink(txt, url)
+    link_to(txt, url + @user_email_flag)
+  end
+
+- link_0 = alink 'Art Electronics', "http://artelectronics.ru"
+- link_1 = alink 'привезло выставку "Научный  туннель"', "http://www.artelectronics.ru/telegraf/telegraf/735"
+- link_2 = alink 'уютный квартал  небоскребов', "http://www.artelectronics.ru/architectural-fantasy/architectural-fantasy/734"
+- link_3 = alink 'видеохудожник Стом Сого', "http://www.artelectronics.ru/blogs/89"
+
+:ruby
   base_text = <<-TEXT
-    Из   первого  в  Новом  Году  дайджеста  
-    <b>дайджеста журнала <a href='http://artelectronics.ru#{@user_email_flag}'>Art Electronics</a></b>.
-    Вы узнаете о
-    <a href='http://artelectronics.ru/telegraf/telegraf/705#{@user_email_flag}'>главных технологических трендах<a> на 2013 год,
-    почему Михаэль Ханеке решил снять
-    <a href='http://artelectronics.ru/vision/vision/707#{@user_email_flag}'>фильм на непопулярную тему</a>,
-    <a href='http://artelectronics.ru/blogs/61#{@user_email_flag}'>кто победил в конкурсе</a>
-    Art Electronics для молодых дизайнеров интерьера.
-    <br>
-    С особым удовольствием представляем новую flash-статью
-    о классиках футуристической графики
-    <a href='http://artelectronics.ru/mirazhi/mirazhi/698#{@user_email_flag}'>"Ретрофутуризм: из прошлого - о будущем"</a>.
+    Вас  приветствует  дайджест  журнала  #{link_0}!
+    <br><br>
+    В этом номере: зачем немецкое общество имени Макса Планка #{link_1} в Петербург, как Стивен Холл сумел построить
+    #{link_2} и в чем видел смысл своих работ скоропостижно скончавшийся #{link_3}.
   TEXT
 
 %table{ table, width: "800px", align: :center }
@@ -50,4 +52,4 @@
 
     %tr
       %td{ wjoin3, align: :center, style: pt20 }
-        = link_to 'ArtElectronics', "http://artelectronics.ru#{@user_email_flag}"
+        = alink 'ArtElectronics', "http://artelectronics.ru"

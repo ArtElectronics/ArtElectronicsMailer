@@ -2,6 +2,8 @@
 -# @new_path = 'http://artelectronics.ru/new'
 
 :ruby
+  def _l(t, url); "<a href='#{url}#{@user_email_flag}'>#{t}</a>"; end
+
   def zero;  "margin:0;padding:0;" ; end
   def img_zero; { border: 0, align: :bottom, style: 'display:block;align:bottom;border:none;' + zero }; end
 

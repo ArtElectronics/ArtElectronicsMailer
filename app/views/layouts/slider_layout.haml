@@ -1,0 +1,13 @@
+!!! 5
+%html
+  %head
+    %meta{ :charset => 'utf-8' }
+    %title Markup Template
+
+    = javascript_include_tag 'jquery'
+
+    = stylesheet_link_tag    'slider/slider_1'
+    = javascript_include_tag 'slider/slider_1'
+
+  %body
+    = yield
