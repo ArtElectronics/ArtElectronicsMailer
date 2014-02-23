@@ -72,24 +72,8 @@ class MarkupTemplate < Padrino::Application
   before '/mail/send' do
     @@img_path    = "#{Padrino.root}/public/images/"
     @@attachments = %w[
-      ae_project/base/ae.jpg
-      
-      ae_project/base/vk.jpg
-      ae_project/base/tw.jpg
-      ae_project/base/fb.jpg
-      ae_project/base/lj.jpg
-
-      ae_project/post/1.png
-      ae_project/post/2.png
-      ae_project/post/3.png
-
-      ae_project/blog/1.jpg
-      ae_project/blog/2.jpg
-      ae_project/blog/3.jpg
-
-      ae_project/archive/1.png
-      ae_project/archive/2.png
-      ae_project/archive/3.png
+      ae_project/base/new_year_header.jpg
+      ae_project/base/new_year_footer.jpg
     ]
 
     #   ae_project/base/8marta.jpg
@@ -161,7 +145,7 @@ class MarkupTemplate < Padrino::Application
         end
 
         log_success.puts adresser
-        sleep 45
+        sleep 20
       rescue Exception => e
         log_error.puts   adresser
         log_enotice.puts "#{adresser} => #{e.message}"

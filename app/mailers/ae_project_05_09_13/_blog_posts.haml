@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: 'БЛУЖДАНИЕ: фотогравюры Питера Миллера',
+      url:   'http://www.artelectronics.ru/blogs/90',
+      content: '28 августа – 6 октября 2013. В РОСФОТО работает выставка американского фотохудожника Питера Миллера, постоянно живущего в Японии.'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Конференция "Технология фантастического"',
+      url: 'http://www.artelectronics.ru/blogs/91',
+      content: 'Изобретение безопасного пассажирского лифта (1852) и электрического кондиционера (1902) — сравнительно простых практичных устройств — радикально изменило облик большого города.'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Конференция RENEWABLE FUTURES в Риге',
+      url: 'http://www.artelectronics.ru/blogs/92',
+      content: 'Open North — новая европейская инициатива, направленнная на развитие культуры в Северном регионе с помощью инноваций в искусстве и культуре.'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]

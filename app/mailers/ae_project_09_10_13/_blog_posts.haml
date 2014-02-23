@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: 'Гаджеты из русских народных сказок',
+      url:   'http://www.artelectronics.ru/blogs/93',
+      content: 'Гаджеты из русских народных сказок'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Награждение победителей в номинации "Визуальная метафора в 3D-графике"',
+      url: 'http://www.artelectronics.ru/blogs/94',
+      content: '2 октября в рамках ежегодного фестиваля Autodesk University в Москве состоялось торжественное награждение финалистов конкурса "Придай форму будущему!".'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Россия в цвете',
+      url: 'http://www.artelectronics.ru/blogs/95',
+      content: 'Выставка фотографий Сергея Прокудина-Горского "Россия в цвете"'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]
