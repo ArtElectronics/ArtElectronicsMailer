@@ -1,4 +1,4 @@
-source :rubygems
+source 'https://rubygems.org'
 
 # Project requirements
 gem 'rake'
@@ -10,5 +10,5 @@ gem 'sass'
 gem 'coffee-script'
 
 # Padrino Stable Gem
-gem 'padrino', '0.10.7'
+gem 'padrino'
 gem 'padrino-flash'
