@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: 'Мишель Гондри снял клип группе "Metronomy"',
+      url:   'http://www.artelectronics.ru/blogs/104',
+      content: 'Британская группа Metronomy разместила на YouTube клип, постановкой которого занимался Мишель Гондри.'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Нет ничего недолговечнее, чем долговременные носители информации',
+      url: 'http://www.artelectronics.ru/blogs/103',
+      content: 'Рассказывает Жан-Клод Карьер (известный французский сценарист, романист, историк, актер)'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Инстагуд!',
+      url:   'http://www.artelectronics.ru/blogs/102',
+      content: 'Друзья, мы теперь есть и в Инстаграм!'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]

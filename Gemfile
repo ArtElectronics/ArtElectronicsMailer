@@ -10,5 +10,6 @@ gem 'sass'
 gem 'coffee-script'
 
 # Padrino Stable Gem
-gem 'padrino'
+gem 'padrino', '0.10.7'
+gem 'tilt', '1.3.3'
 gem 'padrino-flash'

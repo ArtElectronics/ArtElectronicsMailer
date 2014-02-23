@@ -71,40 +71,26 @@ class MarkupTemplate < Padrino::Application
   # SEND MAIL
   before '/mail/send' do
     @@img_path    = "#{Padrino.root}/public/images/"
+
     @@attachments = %w[
-      ae_project/base/new_year_header.jpg
-      ae_project/base/new_year_footer.jpg
+      ae_project/base/ae.jpg
+      ae_project/base/fb.jpg
+      ae_project/base/lj.jpg
+      ae_project/base/tw.jpg
+      ae_project/base/vk.jpg
+
+      ae_project/blog/1.jpg
+      ae_project/blog/2.jpg
+      ae_project/blog/3.jpg
+
+      ae_project/post/1.png
+      ae_project/post/2.png
+      ae_project/post/3.png
+
+      ae_project/archive/1.png
+      ae_project/archive/2.png
+      ae_project/archive/3.png
     ]
-
-    #   ae_project/base/8marta.jpg
-    # ]
-
-    # @@attachments = %w[
-    #   ae_base/new_year_header.jpg
-    #   ae_base/new_year_footer.jpg
-    # ]
-
-    # @@attachments = %w[
-    #   hstore/dots_long.gif
-    #   hstore/dots_short.gif
-      
-    #   hstore/fb.jpg
-    #   hstore/vk.jpg
-    #   hstore/tw.jpg
-    #   hstore/ig.jpg
-    #   hstore/fs.jpg
-
-    #   hstore/header.jpg
-    #   hstore/footer.gif
-    #   hstore/h-store.gif
-    #   hstore/yandex_vote.gif
-    # ]
-
-    # hstore2
-    # @@attachments = []
-    # 29.times do |i|
-    #   @@attachments.push "hstore2/hstore_#{"%02d" % i.next}.png"
-    # end
   end
 
   post '/mail/send' do
