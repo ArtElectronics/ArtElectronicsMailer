@@ -1,0 +1,37 @@
+:ruby
+  posts = [
+    {
+      image: 'ae_project/blog/1.jpg',
+      title: 'Контент в интернет-СМИ будущего будет нелинеен и интерактивен',
+      url:   'http://www.artelectronics.ru/blogs/107',
+      content: 'Для портала «Как сделать презентацию» я написала статью о футуре-текстах, которые мы разрабатываем в Арт Электроникс.'
+    },
+    {
+      image: 'ae_project/blog/2.jpg',
+      title: 'Старт конкурса "A/V ИНТЕРЬЕР" и образовательная программа 11 марта',
+      url: 'http://www.artelectronics.ru/blogs/106',
+      content: '11 марта 2014 года в Синема-холле Университета технологии и дизайна был дан старт конкурса A/V ИНТЕРЬЕР и для всех желающих прошла бесплатная образовательная программа по дизайну интерьера.'
+    },
+    {
+      image: 'ae_project/blog/3.jpg',
+      title: 'Конкурс A|V ИНТЕРЬЕР для студентов Санкт-петербурга!',
+      url:   'http://www.artelectronics.ru/blogs/105',
+      content: 'Мы счастливы объявить о нашем городском межвузовском конкурсе A/V интерьер для студентов, учащихся факультетов архитектуры и дизайна интерьера!'
+    }
+  ]
+
+- posts.each do |post|
+  %table{ table, style: pb10 + mb10 }
+    %tr
+      %td{ td, style: pb10  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+          = post[:title]
+    %tr
+      %td{ td, style: fs12 + lh150 }
+        %table{ table }
+          %tr
+            %td{ td, style: pr10 }
+              = link_to post[:url] + @user_email_flag do
+                = email_image post[:image], {}, @is_mail
+            %td{ td, style: arial + fs14 + lh130 }
+              = post[:content]
