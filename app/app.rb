@@ -99,10 +99,12 @@ class MarkupTemplate < Padrino::Application
     addressers = (addressers_1 + addressers_2).uniq
 
     subject = params[:subject]
-    
+
     # post@artelectronics.ru, killich@mail.ru, zykin-ilya@ya.ru, gkillich@gmail.com
 
     # LOG FILES NAMES
+    FileUtils.mkdir_p "#{Padrino.root}/log"
+
     log_name = "#{Padrino.root}/log/#{Time.new.strftime("%Y-%M-%d-%H-%M")}"
     # LOGGING OPEN
     log_success = File.open "#{log_name}.success.log", 'w+'
@@ -131,7 +133,7 @@ class MarkupTemplate < Padrino::Application
         end
 
         log_success.puts adresser
-        sleep 20
+        # sleep 20
       rescue Exception => e
         log_error.puts   adresser
         log_enotice.puts "#{adresser} => #{e.message}"
