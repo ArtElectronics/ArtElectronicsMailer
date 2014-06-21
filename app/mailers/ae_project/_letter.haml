@@ -5,7 +5,7 @@
 
 :ruby
   link_0 = "<b>дайджест журнала #{alink('Art Electronics!', 'http://artelectronics.ru')}</b>"
-  
+
   link_1 = alink 'технике фотогравюры', "http://www.artelectronics.ru/vision/vision/751"
   link_2 = alink 'технологическое   искусство   и   science   art', "http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/749"
   link_3 = alink 'представляют  себе  будущее', "http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/754"
@@ -29,7 +29,7 @@
         = email_image 'ae_project/base/ae.jpg', {}, @is_mail
   %tr
     %td{ wjoin3, style: arial + fs15 + p10 + lh150 + text_left }
-      = base_text.html_safe
+      = base_text
   %tr
     %td{ wjoin3 } &nbsp;
   %tr
