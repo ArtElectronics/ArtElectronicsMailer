@@ -105,7 +105,7 @@ class MarkupTemplate < Padrino::Application
     # LOG FILES NAMES
     FileUtils.mkdir_p "#{Padrino.root}/log"
 
-    log_name = "#{Padrino.root}/log/#{Time.new.strftime("%Y-%M-%d-%H-%M")}"
+    log_name = "#{Padrino.root}/log/#{Time.new.strftime("%Y-%m-%d-%H-%M")}"
     # LOGGING OPEN
     log_success = File.open "#{log_name}.success.log", 'w+'
     log_error   = File.open "#{log_name}.error.log",   'w+'
