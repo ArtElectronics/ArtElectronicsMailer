@@ -2,33 +2,33 @@
   posts = [
     {
       image: 'ae_project/post/1.png',
-      title: 'После 2013...',
-      url: 'http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/754',
-      content: 'Предсказания популярных зарубежных фантастов о том, как мы будем жить и работать — на Земле или в космосе — в грядущие десятилетия и столетия. Представляем книги, написанные в 2013 году и еще не опубликованные в России.'
+      title: 'Куда бегут собаки?',
+      url: 'http://artelectronics.ru/posts/kuda-begut-sobaki',
+      content: 'Интервью с арт-группой «Куда бегут собаки» – флагманом екатеринбургского искусства и must-see с 2012 года, когда группа получила премию Prix Ars Electronica.'
     },
     {
       image: 'ae_project/post/2.png',
-      title: 'Эволюция от кутюр: искусство и наука в эпоху постбиологии',
-      url: 'http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/749',
-      content: 'Вышел из печати второй том антологии "Эволюция от кутюр", над которым его редактор Дмитрий Булатов работал последние два года. Книга получилась насыщенная – тридцать статей "сумрачных гениев" современности и около трёхсот иллюстраций лучших международных проектов последних двадцати лет.'
+      title: 'Медиаспектакль «Нейроинтегрум» - приглашение к диалогу',
+      url: 'http://artelectronics.ru/posts/mediaspektakl-nejrointegrum-priglashenie-k-dialogu',
+      content: 'В конце марта на Новой сцене Александринского театра состоялся премьерный показ медиаспектакля «Нейроинтегрум». '
     },
     {
       image: 'ae_project/post/3.png',
-      title: "Любовь к трем измерениям. Интервью с Питером Миллером",
-      url:   'http://www.artelectronics.ru/vision/vision/751',
-      content: 'Питер Миллер – один из немногих фотографов, работающих в технике фотогравюры. Сотрудничество с компанией Honda привело американца Питера в Японию, где он остался, встретив свою будущую жену. В РОСФОТО проходит выставка Питера Миллера «Блуждание» (до 13 октября 2013), в рамках которой и состоялась наша беседа.'
+      title: "Татлин. Туча стрел в будущее",
+      url:   'http://artelectronics.ru/posts/tatlin-tucha-strel-v-buduschee',
+      content: 'Многие его замыслы остались на бумаге в виде чертежей и набросков, хранящихся в музеях и нескольких частных коллекциях, которые позволяют представить, что могло бы быть.'
     }
   ]
 
 - posts.each do |post|
   %table{ table, style: pb10 }
     %tr
-      %td{ colspan: 2 }
-        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+      %td{ colspan: 2, style: pb10 }
+        = link_to post[:url] + @user_email_flag, style: gray + fs16 + lh150 + arial do
           = post[:title]
     %tr
-      %td{ td, style: p10 }
+      %td{ td, style: pb10 + pr10 }
         = link_to post[:url] + @user_email_flag, style: iblock do
           = email_image post[:image], {}, @is_mail
       %td{ td }
-        %p{ style: times + fs15 + lh150 }= post[:content]
+        %p{ style: times + fs17 + lh150 }= post[:content]

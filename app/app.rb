@@ -74,6 +74,7 @@ class MarkupTemplate < Padrino::Application
 
     @@attachments = %w[
       ae_project/base/ae.jpg
+
       ae_project/base/fb.jpg
       ae_project/base/lj.jpg
       ae_project/base/tw.jpg

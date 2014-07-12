@@ -2,29 +2,29 @@
   posts = [
     {
       image: 'ae_project/blog/1.jpg',
-      title: 'Электроакустика Беранжер Максимин',
-      url:   'http://www.artelectronics.ru/blogs/99',
-      content: 'Предлагаем нашим читателям послушать музыку, которую создает Беранжер Максимин, французский композитор-экспериментатор'
+      title: 'Профессии и профессионалы будущего',
+      url:   'http://artelectronics.ru/blogs/professii-i-professionaly-buduschego',
+      content: 'Одной из самых востребованных профессий будущего станет «Мастер-печатник», то есть специалист по 3D-печати...'
     },
     {
       image: 'ae_project/blog/2.jpg',
-      title: 'Schizophrenia Taiwan 2.0',
-      url: 'http://www.artelectronics.ru/blogs/98',
-      content: 'В рамках фестиваля кибернетического искусства CYBERFEST в этом году будет представлен проект Schizophrenia Taiwan 2.0'
+      title: 'Фотодневник',
+      url: 'http://artelectronics.ru/blogs/fotodnevnik',
+      content: 'Тема фотографии и ее теории была одним из осознанных лейтмотивов Art Electronics от первых шагов журнала. Между тем,  думая об этом, ничего не снимать - слишком неестественно (даже подозрительно)'
     },
     {
       image: 'ae_project/blog/3.jpg',
-      title: 'О частицах Хиггса',
-      url: 'http://www.artelectronics.ru/blogs/96',
-      content: '"Мы все учились понемногу, чему-нибудь и как-нибудь, Так (обученьем) , слава богу, у нас немудрено блеснуть..."'
+      title: 'Конкурс A/V ИНТЕРЬЕР-2014. Итоги',
+      url: 'http://artelectronics.ru/blogs/konkurs-a-v-interier-2014-itogi',
+      content: 'Конкурс AV-Интерьер — это приглашение выйти за пределы только технической функциональности и только дизайна среды обитания. Здесь простое сложение 1+1 не работает, аудиовидеотехника как правило не хочет суммироваться с пространством жизни. Поиск компромисса требует искусства и знаний...'
     }
   ]
 
 - posts.each do |post|
   %table{ table, style: pb10 + mb10 }
     %tr
-      %td{ td, style: pb10  }
-        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+      %td{ td, style: pb15  }
+        = link_to post[:url] + @user_email_flag, style: gray + fs17 + arial do
           = post[:title]
     %tr
       %td{ td, style: fs12 + lh150 }
@@ -33,5 +33,5 @@
             %td{ td, style: pr10 }
               = link_to post[:url] + @user_email_flag do
                 = email_image post[:image], {}, @is_mail
-            %td{ td, style: arial + fs14 + lh130 }
+            %td{ td, style: arial + fs16 + lh130 }
               = post[:content]
