@@ -1,0 +1,6 @@
+Encryptor.default_options.merge!(
+  algorithm: 'aes-128-cbc',
+  key:  'this KEY  should be redefined into your App',
+  salt: 'this SALT should be redefined into your App',
+  iv:   'this INIT VECTOR should be redefined into your App'
+)

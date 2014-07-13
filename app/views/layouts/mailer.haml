@@ -6,6 +6,15 @@
 
 = yield
 
+%br
+
+%p
+  %b Подписка:
+  = "/subscribe/#{ @user_email.to_the_encrypted }"
+%p
+  %b Отписка:
+  = "/unsubscribe/#{ @user_email.to_the_encrypted }"
+
 %div{ :style => "padding: 10px 10px 0 10px; margin-top: 10px; border: 1px solid gray;" }
   = form_tag '/mail/send' do
     %p
@@ -15,10 +24,10 @@
     %p
       Email через запятую
     %p
-      = text_area_tag :emails, row: 40, cols: 30, style: 'padding: 5px; width: 500px; height: 250px;', value: "zykin-ilya@ya.ru"
+      = text_area_tag :emails, row: 40, cols: 30, style: 'padding: 5px; width: 500px; height: 250px;', value: @user_email
     %p
       Email с новой строки
     %p
-      = text_area_tag :emails_str, row: 40, cols: 30, style: 'padding: 5px; width: 500px; height: 250px;', value: "zykin-ilya@ya.ru"
+      = text_area_tag :emails_str, row: 40, cols: 30, style: 'padding: 5px; width: 500px; height: 250px;', value: @user_email
 
     %p= submit_tag 'Запустить рассылку'

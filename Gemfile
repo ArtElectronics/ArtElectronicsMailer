@@ -8,6 +8,7 @@ gem 'compass'
 gem 'haml'
 gem 'sass'
 gem 'coffee-script'
+gem 'the_encrypted_string'
 
 # Padrino Stable Gem
 gem 'padrino', '0.10.7'

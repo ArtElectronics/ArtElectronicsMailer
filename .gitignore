@@ -10,6 +10,7 @@ vendor/gems/*
 .sass-cache
 
 lib/mail_settings.rb
+lib/the_encrypted_string.rb
 
 .rvmrc
 .ruby-version

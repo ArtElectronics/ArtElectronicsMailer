@@ -1,3 +1,5 @@
+- @user_email_flag = "?u=#{ @user_email.to_the_encrypted }"
+
 :ruby
   def alink(txt, url)
     link_to(txt, url + @user_email_flag)
@@ -52,9 +54,10 @@
       %table{ table }
         %tr
           %td{ style: gray + arial + fs17 + text_left }
-            Если вы не хотите получать рассылку от ArtElectronics.ru
-            просто отправьте пустое письмо на адрес
-            = link_to 'post@artelectronics.ru', 'mailto:post@artelectronics.ru'
+            Если вы не хотите получать Дайджест ArtElectronics.ru
+            на адрес <i>#{ @user_email }</i>, то перейдите по ссылке:
+            %span{ style: "white-space:nowrap" }
+              = link_to 'Не получать Дайджест AE', "http://localhost:3001/unsubscribe/#{ @user_email.to_the_encrypted }"
 
     %tr
       %td{ wjoin3, align: :center, style: pt20 }
