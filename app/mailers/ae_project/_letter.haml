@@ -52,14 +52,15 @@
       = partial '../mailers/ae_project/archive'
       = partial '../mailers/ae_project/social'
 
-      %table{ table }
-        %tr
-          %td{ style: gray + arial + fs17 + text_left }
-            Если вы не хотите получать Дайджест ArtElectronics.ru
-            на адрес <i>#{ @user_email }</i>, то перейдите по ссылке:
-            %span{ style: "white-space:nowrap" }
-              = link_to 'Не получать Дайджест AE', "#{ @site_addr }/unsubscribe/#{ @user_email.to_the_encrypted }"
-
+    %tr
+      %td{ wjoin3, align: :center, style: pt20 }
+        %table{ table, style: bg('#eeeeee') }
+          %tr
+            %td{ style: gray + arial + fs14 + text_left + p12 + lh150 }
+              Если вы не хотите получать Дайджест ArtElectronics.ru
+              на адрес <i style="#{ nobr }">#{ @user_email }</i>, то перейдите по ссылке:
+              %span{ style: nobr }
+                = link_to 'Не получать Дайджест AE', "#{ @site_addr }/unsubscribe/#{ @user_email.to_the_encrypted }"
     %tr
       %td{ wjoin3, align: :center, style: pt20 }
         = alink 'ArtElectronics', @site_addr
