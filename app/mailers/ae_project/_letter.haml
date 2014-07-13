@@ -1,4 +1,5 @@
-- @user_email_flag = "?u=#{ @user_email.to_the_encrypted }"
+- @site_addr = "http://artelectronics.ru"
+- @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
 
 :ruby
   def alink(txt, url)
@@ -27,7 +28,7 @@
 %table{ table, width: "800px", align: :center }
   %tr
     %td{ wjoin3, style: arial + fs10 + p10 + text_left }
-      = link_to "http://artelectronics.ru#{@user_email_flag}", style: iblock do
+      = link_to "#{ @site_addr }#{ @user_email_flag }", style: iblock do
         = email_image 'ae_project/base/ae.jpg', {}, @is_mail
   %tr
     %td{ wjoin3, style: arial + fs15 + p10 + lh150 + text_left }
@@ -37,7 +38,7 @@
   %tr
     %td{ td.merge({ width: '55%' }), style: times + fs10 + p10 }
       %p{ style: zero + pb10 }
-        = link_to 'NEW', "http://artelectronics.ru/news#{@user_email_flag}", style: gray + times + fs17
+        = link_to 'NEW', "#{ @site_addr }/news#{ @user_email_flag }", style: gray + times + fs17
 
       = partial '../mailers/ae_project/posts'
 
@@ -45,7 +46,7 @@
 
     %td{ td, width: '42%', style: arial + p10 }
       %p{ style: zero + pb10 }
-        = link_to 'BLOG', "http://artelectronics.ru/blogs#{@user_email_flag}", style: gray + times + fs17
+        = link_to 'BLOG', "#{ @site_addr }/blogs#{ @user_email_flag }", style: gray + times + fs17
 
       = partial '../mailers/ae_project/blog_posts'
       = partial '../mailers/ae_project/archive'
@@ -57,8 +58,8 @@
             Если вы не хотите получать Дайджест ArtElectronics.ru
             на адрес <i>#{ @user_email }</i>, то перейдите по ссылке:
             %span{ style: "white-space:nowrap" }
-              = link_to 'Не получать Дайджест AE', "http://localhost:3001/unsubscribe/#{ @user_email.to_the_encrypted }"
+              = link_to 'Не получать Дайджест AE', "#{ @site_addr }/unsubscribe/#{ @user_email.to_the_encrypted }"
 
     %tr
       %td{ wjoin3, align: :center, style: pt20 }
-        = alink 'ArtElectronics', "http://artelectronics.ru"
+        = alink 'ArtElectronics', @site_addr
