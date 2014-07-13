@@ -130,7 +130,7 @@ class MarkupTemplate < Padrino::Application
         end
 
         log_success.puts adresser
-        # sleep 20
+        sleep 10
       rescue Exception => e
         log_error.puts   adresser
         log_enotice.puts "#{adresser} => #{e.message}"
