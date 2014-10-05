@@ -1,22 +1,26 @@
+/ http://artelectronics.ru/blogs/lexus-zakhodit-na-territoriyu-teatra
+/ http://artelectronics.ru/blogs/vzglyad-v-buduschee-iz-1947-goda
+/ http://artelectronics.ru/blogs/martin-parr-zhizn-eto-plyazh
+
 :ruby
   posts = [
     {
       image: 'ae_project/blog/1.jpg',
-      title: 'Электроакустика Беранжер Максимин',
-      url:   'http://www.artelectronics.ru/blogs/99',
-      content: 'Предлагаем нашим читателям послушать музыку, которую создает Беранжер Максимин, французский композитор-экспериментатор'
+      title: 'Lexus заходит на территорию театра',
+      url:   'http://artelectronics.ru/blogs/lexus-zakhodit-na-territoriyu-teatra',
+      content: 'В этом году выход нового автомобиля Lexus NX поддержит футуристическое шоу под названием «NX Show Три сестры» и подзаголовком «Контркультурная пьеса о выборе».'
     },
     {
       image: 'ae_project/blog/2.jpg',
-      title: 'Schizophrenia Taiwan 2.0',
-      url: 'http://www.artelectronics.ru/blogs/98',
-      content: 'В рамках фестиваля кибернетического искусства CYBERFEST в этом году будет представлен проект Schizophrenia Taiwan 2.0'
+      title: 'Взгляд в будущее из 1947 года',
+      url: 'http://artelectronics.ru/blogs/vzglyad-v-buduschee-iz-1947-goda',
+      content: 'Удивительные и забавные опыты ретрофутуризма, предпринятые французским режиссером Раймоном Милле в 1947 году.'
     },
     {
       image: 'ae_project/blog/3.jpg',
-      title: 'О частицах Хиггса',
-      url: 'http://www.artelectronics.ru/blogs/96',
-      content: '"Мы все учились понемногу, чему-нибудь и как-нибудь, Так (обученьем) , слава богу, у нас немудрено блеснуть..."'
+      title: 'Мартин Парр. "Жизнь - это пляж"',
+      url: 'http://artelectronics.ru/blogs/martin-parr-zhizn-eto-plyazh',
+      content: 'Мартин Парр фотографирует пляжи уже несколько десятилетий. Выставка в РОСФОТО представляет одни из лучших фотографий автора, с иронией рассказывающих о пляжных ритуалах и традициях всего мира.'
     }
   ]
 
@@ -33,5 +37,5 @@
             %td{ td, style: pr10 }
               = link_to post[:url] + @user_email_flag do
                 = email_image post[:image], {}, @is_mail
-            %td{ td, style: arial + fs14 + lh130 }
+            %td{ td, style: arial + fs15 + lh150 }
               = post[:content]

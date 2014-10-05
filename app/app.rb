@@ -62,8 +62,8 @@ class MarkupTemplate < Padrino::Application
   end
 
   get '/mail/letter' do
-    @user_email =  Base64.encode64('test@test.com').chop.chop.chop
-    @user_email_flag = "?uef=#{@user_email}"
+    @user_email =  'test@test.com'
+    @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
 
     haml :"../mailers/letter", :layout => :mailer, :locals => { :is_mail => false }
   end
@@ -113,8 +113,8 @@ class MarkupTemplate < Padrino::Application
 
     addressers.each do |adresser|
 
-      @user_email =  Base64.encode64(adresser).chop.chop.chop
-      @user_email_flag = "?uef=#{@user_email}"
+      @user_email =  adresser
+      @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
       html_letter = haml(:"../mailers/letter", :locals => { :is_mail => true }, :layout => false)
 
       begin

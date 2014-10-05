@@ -1,34 +1,38 @@
+/ http://artelectronics.ru/posts/richard-bakminster-fuller-mnogogrannik-kak-predchuvstvie
+/ http://artelectronics.ru/posts/dzhejson-merkoski-kniga-2-0-proshloe-nastoyaschee-i-buduschee-elektronnykh-knig-glazami-sozdatelya-kindle
+/ http://artelectronics.ru/posts/otkuda-my-znaem-tak-mnogo-ob-asteroidakh
+
 :ruby
   posts = [
     {
       image: 'ae_project/post/1.png',
-      title: 'После 2013...',
-      url: 'http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/754',
-      content: 'Предсказания популярных зарубежных фантастов о том, как мы будем жить и работать — на Земле или в космосе — в грядущие десятилетия и столетия. Представляем книги, написанные в 2013 году и еще не опубликованные в России.'
+      title: 'Ричард Бакминстер Фуллер: многогранник как предчувствие',
+      url: 'http://artelectronics.ru/posts/richard-bakminster-fuller-mnogogrannik-kak-predchuvstvie',
+      content: 'Знаменитый архитектор и инженер Ричард Бакминстер Фуллер в 1920-е годы ввел в архитектуру понятие четвертого измерения, снабжая проектируемые дома и автомобили аббревиатурой 4D.'
     },
     {
       image: 'ae_project/post/2.png',
-      title: 'Эволюция от кутюр: искусство и наука в эпоху постбиологии',
-      url: 'http://www.artelectronics.ru/mirazhi/literaturnoe-revyu/749',
-      content: 'Вышел из печати второй том антологии "Эволюция от кутюр", над которым его редактор Дмитрий Булатов работал последние два года. Книга получилась насыщенная – тридцать статей "сумрачных гениев" современности и около трёхсот иллюстраций лучших международных проектов последних двадцати лет.'
+      title: 'Джейсон Меркоски. Книга 2.0. Прошлое, настоящее и будущее электронных книг глазами создателя Kindle',
+      url: 'http://artelectronics.ru/posts/dzhejson-merkoski-kniga-2-0-proshloe-nastoyaschee-i-buduschee-elektronnykh-knig-glazami-sozdatelya-kindle',
+      content: 'Это рассказ о революции электронных книг, о том, что такое электронные книги, что они значат для нашего будущего и для чтения вообще. Что ждет бумажные книги в будущем?'
     },
     {
       image: 'ae_project/post/3.png',
-      title: "Любовь к трем измерениям. Интервью с Питером Миллером",
-      url:   'http://www.artelectronics.ru/vision/vision/751',
-      content: 'Питер Миллер – один из немногих фотографов, работающих в технике фотогравюры. Сотрудничество с компанией Honda привело американца Питера в Японию, где он остался, встретив свою будущую жену. В РОСФОТО проходит выставка Питера Миллера «Блуждание» (до 13 октября 2013), в рамках которой и состоялась наша беседа.'
+      title: "Откуда мы знаем так много об астероидах?",
+      url:   'http://artelectronics.ru/posts/otkuda-my-znaem-tak-mnogo-ob-asteroidakh',
+      content: 'Об астероидах мы знаем больше, чем о земле под своими ногами! Компания Planetary Resources, которая собирается добывать полезные ископаемые в космосе, рассказывает в инфографике, почему так получилось и чем астероиды интересны.'
     }
   ]
 
 - posts.each do |post|
   %table{ table, style: pb10 }
     %tr
-      %td{ colspan: 2 }
-        = link_to post[:url] + @user_email_flag, style: gray + fs15 + arial do
+      %td{ colspan: 2, style: pb10 }
+        = link_to post[:url] + @user_email_flag, style: gray + fs15 + lh170 + arial do
           = post[:title]
     %tr
       %td{ td, style: p10 }
         = link_to post[:url] + @user_email_flag, style: iblock do
           = email_image post[:image], {}, @is_mail
       %td{ td }
-        %p{ style: times + fs15 + lh150 }= post[:content]
+        %p{ style: arial + fs15 + lh150 }= post[:content]

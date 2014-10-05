@@ -15,6 +15,8 @@
   def arial; "font-family:Arial;"  ; end
   def times; "font-family:Times;"  ; end
 
+  def nobr; "white-space:nowrap"; end
+
   # text align
   def text_left;   "text-align:left;"    ; end
   def text_center; "text-align:center;"  ; end
@@ -40,7 +42,7 @@
   def bg(x); "background:#{x};" ; end
 
   def fc(x, important = false);
-    i = important ? ' !important' : '' 
+    i = important ? ' !important' : ''
     "color:#{x}#{i};"
   end
 
@@ -60,7 +62,7 @@
 
       def p#{i};   "padding:#{i}px;"         ; end
       def m#{i};   "margin:#{i}px;"          ; end
-      
+
       def pt#{i};  "padding-top:#{i}px;"     ; end
       def pr#{i};  "padding-right:#{i}px;"   ; end
       def pb#{i};  "padding-bottom:#{i}px;"  ; end
