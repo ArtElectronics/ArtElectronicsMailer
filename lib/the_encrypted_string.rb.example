@@ -1,0 +1,6 @@
+Encryptor.default_options.merge!(
+  :algorithm => 'aes-128-cbc',
+  :key  => "just_key",
+  :iv   => "just_another_key",
+  :salt => "just_salt"
+)

@@ -16,3 +16,4 @@ lib/mail_settings.rb
 .ruby-gemset
 
 .DS_Store
+lib/the_encrypted_string.rb
