@@ -1,54 +1,67 @@
+- @topic     = "Куда  бегут  собаки,  зачем  актерам  энцефалограф  и кем будут"
+- @site_addr = "http://artelectronics.ru"
+- @user_email_flag = "?uef=#{ @user_email.to_the_encrypted }"
+
 :ruby
   def alink(txt, url)
     link_to(txt, url + @user_email_flag)
   end
 
 :ruby
-  link_1 = "http://artelectronics.ru/posts/tatlin-tucha-strel-v-buduschee#{ @user_email_flag }"
+  link_0 = "<b>дайджест журнала #{alink('Art Electronics!', 'http://artelectronics.ru')}</b>"
+
+  link_1 = alink '"Нейроинтегрум"', "http://artelectronics.ru/posts/mediaspektakl-nejrointegrum-priglashenie-k-dialogu"
+  link_2 = alink 'открытку по мотивам творчества Татлина', "http://artelectronics.ru/posts/tatlin-tucha-strel-v-buduschee"
+  link_3 = alink 'атлас новых профессий', "http://artelectronics.ru/blogs/professii-i-professionaly-buduschego"
+
   base_text = <<-TEXT
+    Вас приветствует #{link_0}<br><br>
+
+    В этом номере -
+    смотрим футуристичный медиаспектакль
+    #{link_1},
+    посылаем друзьям самодельную
+    #{link_2}
+    и изучаем
+    #{link_3}.
   TEXT
 
 %table{ table, width: "800px", align: :center }
   %tr
     %td{ wjoin3, style: arial + fs10 + p10 + text_left }
-      %center
-        = link_to "http://artelectronics.ru#{@user_email_flag}", style: iblock do
-          = email_image 'ae_project/base/ae.jpg', {}, @is_mail
-      %p{ style: arial + fs16 + p5 + mb5 + mt30 + text_left }
-        Вас приветствует дайджест журнала
-        = "#{ link_to "Art Electronics", "http://artelectronics.ru#{@user_email_flag}" }!"
-      %p{ style: arial + fs16 + p5 + mb5 + mt5 + text_left }
-        Представляем новый future-текст от Art Electronics:
-        = link_to "Татлин: туча стрел в будущее", link_1
+      = link_to "#{ @site_addr }#{ @user_email_flag }", style: iblock do
+        = email_image 'ae_project/base/ae.jpg', {}, @is_mail
   %tr
     %td{ wjoin3, style: arial + fs15 + p10 + lh150 + text_left }
-
-      %table{ table }
-        %tr
-          %td{ style: pr15 }
-            = link_to link_1, style: iblock do
-              = email_image 'tatlin/title300.png', { title: "Перейти к статье: Татлин: туча стрел в будущее" }, @is_mail
-          %td{ td }
-            %p{ style: arial + fs16 + lh150 + mb5 + text_left }
-              История Татлина более чем типична в контексте отношений советской идеологии и авангарда,
-              приветствовавшего советскую власть и ставшего жертвой ее террора.
-              «Это художник, умерший за 20 лет до своей смерти», – напишут о нем с горечью.
-
-            %p{ style: arial + fs16 + lh150 + mb5 + text_left }
-              Многие его замыслы остались на бумаге в виде чертежей и набросков. И только эти чертежи и наброски, хранящиеся в музеях и нескольких частных коллекциях, позволяют представить, что могло бы быть.
-
-      %p{ style: arial + fs16 + lh150 + mb15 + text_left }
-        В конце статьи вас ждет сюрприз - возможность отправить своим друзьям открытку, составленную из элементов творчества Татлина! #futureT
-
-
-      = link_to link_1, style: iblock do
-        = email_image 'tatlin/tatlin_main.jpg', { title: "Перейти к статье: Татлин: туча стрел в будущее" }, @is_mail
-
-      %p{ style: arial + fs16 + lh150 + mb15 + text_left }
-        %b Перейти к статье:
-        = link_to "Татлин: туча стрел в будущее", link_1
-
+      = base_text
   %tr
-    %td{ wjoin3, align: :center, style: arial + pt20 + fs13 }
-      = alink 'ArtElectronics', "http://artelectronics.ru"
-      , 2014
+    %td{ wjoin3 } &nbsp;
+  %tr
+    %td{ td.merge({ width: '55%' }), style: times + fs10 + p10 }
+      %p{ style: zero + pb10 }
+        = link_to 'NEW', "#{ @site_addr }/news#{ @user_email_flag }", style: gray + times + fs17
+
+      = partial '../mailers/ae_project/posts'
+
+    %td{ width: '3%' } &nbsp;
+
+    %td{ td, width: '42%', style: arial + p10 }
+      %p{ style: zero + pb10 }
+        = link_to 'BLOG', "#{ @site_addr }/blogs#{ @user_email_flag }", style: gray + times + fs17
+
+      = partial '../mailers/ae_project/blog_posts'
+      = partial '../mailers/ae_project/archive'
+      = partial '../mailers/ae_project/social'
+
+    %tr
+      %td{ wjoin3, align: :center, style: pt20 }
+        %table{ table, style: bg('#eeeeee') }
+          %tr
+            %td{ style: gray + arial + fs14 + text_left + p12 + lh150 }
+              Если вы не хотите получать Дайджест ArtElectronics.ru
+              на адрес <i style="#{ nobr }">#{ @user_email }</i>, то перейдите по ссылке:
+              %span{ style: nobr }
+                = link_to 'Не получать Дайджест AE', "#{ @site_addr }/unsubscribe/#{ @user_email.to_the_encrypted }"
+    %tr
+      %td{ wjoin3, align: :center, style: pt20 }
+        = alink 'ArtElectronics', @site_addr
